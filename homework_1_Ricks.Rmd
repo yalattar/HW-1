@@ -125,9 +125,19 @@ y = hightemp,
 facet_grid(weekday ~ .)
 ```
 
+Mapping by color would be preferable for smaller data sets where there is no overlap in data point values. Color mapping is also very easy on the eyes and would be good if you are doing a presentation to a group of people. Faceting would be more useful in a large data set where data points will be plotted over top of and may even be indiscernible from each other. Faceting would be useful for a scientist who wnats to account for every variable.
+
 ## Question 12
 
-
+```{r}
+ggplot(data = rail_trail) +
+geom_smooth(
+mapping = aes(
+x = volume, 
+y = hightemp,
+)) +
+facet_grid(weekday ~ .)
+```
 
 
 ## Question 13
