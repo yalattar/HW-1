@@ -139,9 +139,28 @@ y = hightemp,
 facet_grid(weekday ~ .)
 ```
 
+Regardless of weekday or not, the lines of best fit show at most a slightly left-skewed positive relationship. But, due to the fact that this is a sample, not a population, I would describe these trends as uniform. No definitive trends can be ascertained from this sample. To get definitive explanations, observations need to be recorded on days where the temperature falls below 41 degrees, as low temperature is a likely confounding variable but no observations were recorded on days below 41 degrees.
 
 ## Question 13
-
-
-
+```{r}
+ggplot(data = rail_trail) +
+geom_smooth(
+mapping = aes(
+x = volume, 
+y = hightemp,
+se = FALSE,
+)) +
+facet_grid(weekday ~ .)
+```
+```{r}
+ggplot(data = rail_trail) +
+geom_smooth(
+mapping = aes(
+x = volume, 
+y = hightemp,
+se =  TRUE
+)) +
+facet_grid(weekday ~ .)
+```
+Ask for help on this one, se is supposed to have some effect on the confidence intervals
 
